@@ -1,4 +1,13 @@
 import Head from "next/head";
+import {
+  Paper,
+  Button,
+  TextInput,
+  PasswordInput,
+  Center,
+  Group,
+} from "@mantine/core";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -10,7 +19,34 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hello World</h1>
+        <header>
+          <Center>
+            <h1>CPH Business booking</h1>
+          </Center>
+          <Center>
+            <Paper shadow="xs" p="xl">
+              <h2>Login</h2>
+              <TextInput
+                placeholder="E-mail"
+                description="Write your email here"
+                mb="md"
+              />
+              <PasswordInput
+                placeholder="Password"
+                description="Write your password here"
+                mb="md"
+              />
+              <Group>
+                <Link href="/login/new_user">Create user here</Link>
+                <Link href="/login">
+                  <Button variant="light" color="pink" radius="md">
+                    Login
+                  </Button>
+                </Link>
+              </Group>
+            </Paper>
+          </Center>
+        </header>
       </main>
     </>
   );
